@@ -8,6 +8,7 @@ var mongoose = require('mongoose')
 // Router importing
 var petOwnerRouter = require('./routes/PetOwnerRouter');
 var vaccineRouter = require('./routes/VaccineRouter');
+var petRouter = require('./routes/PetRouter');
 
 var app = express();
 
@@ -38,6 +39,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // Using routes
 app.use('/petowner', petOwnerRouter);
 app.use('/vaccine', vaccineRouter);
+app.use('/pet', petRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

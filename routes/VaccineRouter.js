@@ -1,6 +1,7 @@
 const router = require('express').Router()
-const { create, deleteVacc } = require('../controllers/VaccineController')
+const { create, deleteVacc, getAll } = require('../controllers/VaccineController')
 
+router.get('/', getAll)
 router.post('/create', create)
 router.delete('/delete', deleteVacc)
 
